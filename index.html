@@ -11,6 +11,23 @@
             font-family: "PT Serif", serif;
             font-weight: 400;
             font-style: normal;
+
+        }
+
+        .plan-item {
+            border: 2px solid transparent;
+            /* Default border */
+            cursor: pointer;
+            /* Pointer cursor on hover */
+            transition: border-color 0.3s;
+            /* Smooth transition for border color */
+        }
+
+        .plan-item.selected {
+            border-color: #007BFF;
+            /* Change border color when selected */
+            background-color: #e0f7fa;
+            /* Optional: change background color when selected */
         }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,19 +46,19 @@
                 <div class="steps absolute text-white font-bold flex items-center justify-center">
                     <div class="mt-8 circles flex space-x-8  ">
                         <div
-                            class="circle1 w-10 h-10 border-2 border-white rounded-full flex justify-center items-center font-bold text-2xl">
+                            class=" circle1  border-2    w-10 h-10  rounded-full flex justify-center items-center font-bold text-2xl">
                             <p>1</p>
                         </div>
                         <div
-                            class="circle2 w-10 h-10 border-2 border-white rounded-full flex justify-center items-center font-bold text-2xl">
+                            class=" circle2 w-10 h-10 border-2 border-white rounded-full flex justify-center items-center font-bold text-2xl">
                             <p>2</p>
                         </div>
                         <div
-                            class="circle3 w-10 h-10 border-2 border-white rounded-full flex justify-center items-center font-bold text-2xl">
+                            class=" circle3 w-10 h-10 border-2 border-white rounded-full flex justify-center items-center font-bold text-2xl">
                             <p>3</p>
                         </div>
                         <div
-                            class="circle4 w-10 h-10 border-2 border-white rounded-full flex justify-center items-center font-bold text-2xl">
+                            class=" circle4 w-10 h-10 border-2 border-white rounded-full flex justify-center items-center font-bold text-2xl">
                             <p>4</p>
                         </div>
                     </div>
@@ -54,7 +71,7 @@
                     <div class="steps absolute text-white font-bold w-full h-full font-ptserif mt-4">
                         <div class="container1 flex">
                             <div
-                                class="w-10 h-10 flex justify-center items-center mb-8 mx-3 rounded-full border-white border-2 step1">
+                                class="circle1 border-2    w-10 h-10 flex justify-center items-center mb-8 mx-3 rounded-full  step1">
                                 <p>1</p>
                             </div>
                             <div>
@@ -65,7 +82,7 @@
 
                         <div class="container2 flex">
                             <div
-                                class="w-10 h-10 flex justify-center items-center mb-8 mx-3 rounded-full border-white border-2 step1">
+                                class="circle2 w-10 h-10 flex justify-center items-center mb-8 mx-3 rounded-full border-white border-2 step1">
                                 <p>2</p>
                             </div>
                             <div>
@@ -76,7 +93,7 @@
 
                         <div class="container3 flex">
                             <div
-                                class="w-10 h-10 flex justify-center items-center mb-8 mx-3 rounded-full border-white border-2 step1">
+                                class="circle3 w-10 h-10 flex justify-center items-center mb-8 mx-3 rounded-full border-white border-2 step1">
                                 <p>3</p>
                             </div>
                             <div>
@@ -87,7 +104,7 @@
 
                         <div class="container4 flex">
                             <div
-                                class="w-10 h-10 flex justify-center items-center mb-8 mx-3 rounded-full border-white border-2 step1">
+                                class="circle4 w-10 h-10 flex justify-center items-center mb-8 mx-3 rounded-full border-white border-2 step1">
                                 <p>4</p>
                             </div>
                             <div>
@@ -95,11 +112,15 @@
                                 <p>Summary</p>
                             </div>
                         </div>
+
                     </div>
+
                 </div>
 
                 <div class="relative overflow-hidden w-full">
-                    <div class="text1 absolute w-full p-8 space-y-4 font-ptserif transform translate-x-0 transition-transform duration-200 ease-in-out">
+    <!--page1-->              
+                    <div
+                        class="text1 translate-x-0 absolute w-full p-8 space-y-4 font-ptserif transform  transition-transform duration-200 ease-in-out">
                         <!-- Content for Step 1 -->
                         <div>
                             <h1 class="text-blue-950 font-bold mt-2 text-3xl">
@@ -109,39 +130,39 @@
                                 Please provide your name, email address, and phone number.
                             </p>
                         </div>
-                
+
                         <div class="w-full h-96 space-y-4 relative">
-                            <div class="input1 text-blue-950 text-lg space-y-2">
-                                <h1>Name</h1>
-                                <form action="">
-                                    <input class="border-2 border-slate-400 rounded-lg w-full h-10 p-2" type="text"
+                            <div class=" text-blue-950 text-lg space-y-2">
+
+                                <form action="" id="form">
+                                    <label for="name">Name</label>
+                                    <input required id="name" name="name"
+                                        class="border-2 border-slate-400 rounded-lg w-full h-10 p-2" type="text"
                                         placeholder="eg. Stephen King" name="" id="" />
-                                </form>
-                            </div>
-                            <div class="input2 text-blue-950 text-lg space-y-2">
-                                <h1>Email Address</h1>
-                                <form action="">
-                                    <input class="border-2 border-slate-400 rounded-lg w-full h-10 p-2" type="text"
+                                    <label for="email">Email Address</label>
+
+                                    <input required type="email" id="Email Address" name="Email Address"
+                                        class="border-2 border-slate-400 rounded-lg w-full h-10 p-2"
                                         placeholder="eg. Stephenking@lorem.com" name="" id="" />
-                                </form>
-                            </div>
-                            <div class="input3 text-blue-950 text-lg space-y-2">
-                                <h1>Contact Number</h1>
-                                <form action="">
-                                    <input class="border-2 border-slate-400 rounded-lg w-full h-10 p-2" type="text"
+                                    <label for="Number"> Number</label>
+                                    <input type="text" id="Number" name="Number" pattern="\d{10}" required
+                                        class="border-2 border-slate-400 rounded-lg w-full h-10 p-2" type="text"
                                         placeholder="91-7357711902" name="" id="" />
+                                    <button
+                                        class="absolute bottom-0 right-0 w-28 text-white font-semibold h-10 bg-blue-950 rounded-lg border-slate-400  flex items-center justify-center cursor-pointer"
+                                        id="next1" type="submit">Next Step</button>
                                 </form>
                             </div>
-                
-                            <!-- Positioning the button at the bottom right -->
-                            <div
-                                class="absolute bottom-0 right-0 w-28 text-white font-semibold h-10 bg-blue-950 rounded-lg border-slate-400 next1 flex items-center justify-center cursor-pointer">
-                                <h1>Next Step</h1>
-                            </div>
+
+
+
                         </div>
                     </div>
-                
-                    <div class="text2 absolute w-full p-8 space-y-4 font-ptserif transform translate-x-full transition-transform duration-500 ease-in-out">
+                    
+                    
+    <!--page2-->
+                    <div
+                        class="text2  h-full relative w-full p-8 space-y-4 font-ptserif transform translate-x-full transition-transform duration-500 ease-in-out">
                         <!-- Content for Step 2 -->
                         <div>
                             <h1 class="text-blue-950 font-bold mt-2 text-3xl">
@@ -151,33 +172,35 @@
                                 You have a choice of monthly and yearly billing.
                             </p>
                         </div>
-                
-                        <div class="w-full h-full">
+
+                        <div class="w-full h-full space-y-8">
                             <div class="plans flex space-x-2 text-black">
-                                <div class="arcade w-1/4 border-black border-2 p-2 rounded-lg">
+                                <div id="arcade" class="plan-item w-2/6 border-black border-2 p-2 rounded-lg">
                                     <img src="image/icon-arcade.svg" alt="" />
                                     <p class="text-blue-950 font-bold mt-6">Arcade</p>
                                     <div>
-                                        <p class="text-slate-500 text-xs text-sm mt-2 font-bold">$9/yr</p>
+                                        <p id="arcadep" class="text-slate-500 text-xs text-sm mt-2 font-bold">$9/yr</p>
                                     </div>
                                 </div>
-                                <div class="Advanced relative w-1/4 border-black border-2 pt-2 px-1 sm:p-2 rounded-lg">
+                                <div id="advanced"
+                                    class="plan-item relative w-2/6 border-black border-2 pt-2 px-1 sm:p-2 rounded-lg">
                                     <img src="image/icon-advanced.svg" alt="" />
                                     <p class="text-sm object-fit text-blue-950 font-bold mt-6">Advanced</p>
                                     <div>
-                                        <p class="text-slate-500 text-xs mt-2 font-bold">$12/yr</p>
+                                        <p id="Advancedp" class="text-slate-500 text-xs mt-2 font-bold">$12/yr</p>
                                     </div>
                                 </div>
-                                <div class="pro w-1/4 border-black border-2 p-2 rounded-lg">
+                                <div id="pro" class="plan-item  w-2/6 border-black border-2 p-2 rounded-lg">
                                     <img src="image/icon-pro.svg" alt="" />
                                     <p class="text-sm text-blue-950 font-bold mt-6">Pro</p>
                                     <div>
-                                        <p class="text-slate-500 text-xs mt-2 font-bold">$15/yr</p>
+                                        <p id="prop" class="text-slate-500 text-xs mt-2 font-bold">$15/yr</p>
                                     </div>
                                 </div>
                             </div>
+
                             <div
-                                class="yearlyplan mt-4 bg-blue-100 flex justify-center items-center w-4/5 h-12 space-x-4">
+                                class="yearlyplan mt-4 bg-blue-100 flex justify-center items-center w-full h-12 space-x-4">
                                 <p class="text-xs font-bold text-blue-950 font-ptserif">Monthly</p>
                                 <label for="check" class="cursor-pointer relative bg-blue-950 w-12 h-6 rounded-full">
                                     <input type="checkbox" id="check" class="sr-only peer">
@@ -186,14 +209,161 @@
                                     </span>
                                 </label>
                                 <p class="text-xs text-gray-400 font-bold font-ptserif">Yearly</p>
+
+                            </div>
+                            <div class=" w-full" id="back2">
+                                <button
+                                    class=" absolute w-2/12  h-10 mt-10 left-8 text-gray-400 font-semibold   rounded-lg border-slate-400  flex items-center justify-center cursor-pointer text-sm"
+                                    type="submit">Go Back </button>
+                            </div>
+                            <div class=" w-full" id="next2">
+                                <button
+                                    class=" absolute w-2/12  h-10 mt-10 right-8 text-white font-semibold  bg-blue-950 rounded-lg border-slate-400  flex items-center justify-center cursor-pointer text-sm"
+                                    type="submit">Next Step</button>
+                            </div>
+
+                        </div>
+                    </div>
+     <!--page3-->
+                    <div
+                        class="text3   h-full relative w-full p-8 space-y-4 font-ptserif transform translate-x-full transition-transform duration-500 ease-in-out">
+                        <!-- Content for Step 2 -->
+
+                        <h1 class="text-blue-950 font-bold mt-2 text-3xl">
+                            Pick Add-Ons
+                        </h1>
+                        <p class="text-slate-500">
+                            Add-ons help enhance your gaming experience.
+                        </p>
+
+                        <div class=" w-full h-full">
+                            <div id="options" class="flex flex-col space-y-4 ">
+                                <div
+                                    class=" p-1 pick1 flex justify-between items-center w-full rounded-lg border-slate-400 border-2 h-20">
+                                    <div class="flex">
+                                        <div class="flex justify-center items-center p-4">
+                                            <input type="checkbox" name="" id="">
+                                        </div>
+
+                                        <div>
+
+                                            <h4 class="text-blue-950 font-bold ">online services</h4>
+                                            <h5 class="text-sm text-gray-400 font-bold">Access to multiplayer games</h5>
+                                        </div>
+                                    </div>
+
+                                    <h4 class="px-2 text-indigo-600">$10/yr</h4>
+                                </div>
+                                <div
+                                    class=" p-1 pick2 flex justify-between items-center w-full rounded-lg border-slate-400 border-2 h-20">
+                                    <div class="flex">
+                                        <div class="flex justify-center items-center p-4">
+                                            <input type="checkbox" name="" id="">
+                                        </div>
+
+                                        <div>
+
+                                            <h4 class="text-blue-950 font-bold ">Larger storage</h4>
+                                            <h5 class="text-sm text-gray-400 font-bold">Extra 1TB of cloud save</h5>
+                                        </div>
+                                    </div>
+
+                                    <h4 class="px-2 text-indigo-600">$10/yr</h4>
+                                </div>
+                                <div
+                                    class=" p-1 pick3 flex justify-between items-center w-full rounded-lg border-slate-400 border-2 h-20">
+                                    <div class="flex">
+                                        <div class="flex justify-center items-center p-4">
+                                            <input type="checkbox" name="" id="">
+                                        </div>
+
+                                        <div>
+
+                                            <h4 class="text-blue-950 font-bold ">Customizable profile</h4>
+                                            <h5 class="text-sm text-gray-400 font-bold">Custom theme on your profile
+                                            </h5>
+                                        </div>
+                                    </div>
+
+                                    <h4 class="px-2 text-indigo-600">$10/yr</h4>
+                                </div>
+                                <div class=" w-full" id="back3">
+                                    <button
+                                        class=" absolute w-2/12  h-10 mt-10 left-8 text-gray-400 font-semibold   rounded-lg border-slate-400  flex items-center justify-center cursor-pointer text-sm"
+                                        type="submit">Go Back </button>
+                                </div>
+                                <div class=" w-full" id="next3">
+                                    <button
+                                        class=" absolute w-2/12  h-10 mt-10 right-8 text-white font-semibold  bg-blue-950 rounded-lg border-slate-400  flex items-center justify-center cursor-pointer text-sm"
+                                        type="submit">Next Step</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+<!--page4-->
+                    <div
+                        class="text4  h-full relative w-full p-8 space-y-4 font-ptserif transform translate-x-full transition-transform duration-500 ease-in-out">
+                        <!-- Content for Step 2 -->
+
+                        <h1 class="text-blue-950 font-bold mt-2 text-3xl">
+                            Finishing up
+                        </h1>
+                        <p class="text-slate-500">
+                            Double-check everything looks OK before confirming.
+                        </p>
+
+                        <div class=" w-full h-full space-y-20">
+                            <div id="options" class="flex flex-col  ">
+                                <div
+                                    class=" p-4 pick1 flex justify-between items-center w-full bg-gray-200  border-slate-400 border-b-2 h-20">
+
+                                    <div>
+
+                                        <h4 class="text-blue-900 text-lg font-bold ">Advanced(monthly)</h4>
+                                        <h5 class="text-sm  font-bold">change</h5>
+                                    </div>
+
+
+                                    <h4 class="px-2 text-indigo-600">$10/yr</h4>
+                                </div>
+                                <div class=" p-4 pick2 flex justify-between items-center w-full bg-gray-200   h-12">
+                                    <h1></h1>
+                                </div>
+                                <div class=" p-4 pick2 flex justify-between items-center w-full   h-12">
+                                    <div>
+                                        <h5 class=" text-gray-400 text-lg font-bold">Total (Per Month)</h5>
+                                    </div>
+                                    <h4 class=" px-2 text-2xl font-bold text-indigo-700">$10/yr</h4>
+                                </div>
+
+                            </div>
+
+
+
+                            <div class=" w-full" id="back4">
+                                <button
+                                    class=" absolute w-2/12  h-10 mt-10 left-8 text-gray-400 font-semibold   rounded-lg border-slate-400  flex items-center justify-center cursor-pointer text-sm"
+                                    type="submit">Go Back </button>
+                            </div>
+                            <div class=" w-full" id="submit">
+                                <button
+                                    class=" absolute w-2/12  h-10 mt-10 right-8 text-white font-semibold  bg-blue-950 rounded-lg border-slate-400  flex items-center justify-center cursor-pointer text-sm"
+                                    type="submit">submit</button>
                             </div>
                         </div>
                     </div>
+                   
                 </div>
-                
-                
+
             </div>
-            <script src="script.js"></script>
+
+        </div>
+
+
+    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
